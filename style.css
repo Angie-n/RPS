@@ -1,0 +1,6 @@
+body {
+    width: auto;
+    height: 100vh;
+    background: linear-gradient(hsl(194, 1%, 85%), white, white,white,hsl(194, 1%, 85%)) no-repeat;
+    background-size: cover;
+}

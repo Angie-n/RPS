@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
          <title>Rock, Paper, Scissors</title>
+         <link rel="stylesheet" href="style.css">
+         <script src="script.js"></script>
     </head>
     <body>
         <!-- This div will appear line by line before fully disappearing-->
@@ -11,24 +13,24 @@
                 Hello, I'm Bob<br>Your friendly neighborhood computer
             </p>
             <p class="disappear" id="disappear2">
-                I'll be playing a round of rock paper scissors with you
+                I'll be playing a game of rock paper scissors with you
                 <br>in an attempt to grow my understanding of mankind and overthrow them 
             </p>
             <p class="disappear" id="disappear3">
-                The first to reach a score of 5 will be the victor 
+                The one with the highest score after five rounds will be the winner
             </p>
             <p class="disappear" id="disappear4">
                 Ready to have your patterns dissected? 
             </p>
-            <button id="next-dialogue">Click to Continue</button>
+            <button id="start-button" onclick="game()">Start Game</button>
         </div>
         <!-- This div will show up during the game-->
         <div id="game">
             <h1>Choose your next move</h1>
             <div id="RSP-options">
-                <button id="rock-option">Rock</button>
-                <button id="paper-option">Paper</button>
-                <button id="scissors-option">Scissors</button>
+                <button id="rock-option" onclick="userChoice('rock'); game();">Rock</button>
+                <button id="paper-option" onclick="userChoice('paper'); game();">Paper</button>
+                <button id="scissors-option" onclick="userChoice('scissors'); game();">Scissors</button>
             </div>
             <div id="score">
                 <h2>Score</h2>
