@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+         <title>Rock, Paper, Scissors</title>
+    </head>
+    <body>
+        <!-- This div will appear line by line before fully disappearing-->
+        <div id="intro">
+            <p class="disappear" id="disappear1">
+                Hello, I'm Bob<br>Your friendly neighborhood computer
+            </p>
+            <p class="disappear" id="disappear2">
+                I'll be playing a round of rock paper scissors with you
+                <br>in an attempt to grow my understanding of mankind and overthrow them 
+            </p>
+            <p class="disappear" id="disappear3">
+                The first to reach a score of 5 will be the victor 
+            </p>
+            <p class="disappear" id="disappear4">
+                Ready to have your patterns dissected? 
+            </p>
+            <button id="next-dialogue">Click to Continue</button>
+        </div>
+        <!-- This div will show up during the game-->
+        <div id="game">
+            <h1>Choose your next move</h1>
+            <div id="RSP-options">
+                <button id="rock-option">Rock</button>
+                <button id="paper-option">Paper</button>
+                <button id="scissors-option">Scissors</button>
+            </div>
+            <div id="score">
+                <h2>Score</h2>
+                <p id="user-score">Human: 0</p>
+                <p id="computer-score">Computer: 0</p>
+            </div>
+            <p id="game-remark">With the data I have accumulated, this should be easy</p>
+        </div>
+        <!-- This div will show up after the game-->
+        <div id="results">
+            <h1 id="win-lose"></h2>
+            <p id="results-remark"></p>
+            <button id="next-game">Play Another Match</button>
+        </div>
+    </body>
+</html>
