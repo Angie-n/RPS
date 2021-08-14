@@ -4,3 +4,56 @@ body {
     background: linear-gradient(hsl(194, 1%, 85%), white, white,white,hsl(194, 1%, 85%)) no-repeat;
     background-size: cover;
 }
+
+.disappear {
+    letter-spacing: .12em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: solid 1px;
+    animation: typed-text linear forwards, text-cursor linear forwards infinite;
+}
+
+#disappear1a {
+    --text-width: 15ch;
+    animation-duration: 2s, 600ms;
+    animation-timing-function: steps(15, end);
+}
+
+#disappear1b {
+    --text-width: 38.7ch;
+    animation-duration: 4s, 600ms;
+    animation-timing-function: steps(60, end);
+}
+
+#disappear2a {
+    --text-width: 55.5ch;
+    animation-duration: 5s, 600ms;
+    animation-timing-function: steps(80, end);
+}
+
+#disappear2b {
+    --text-width: 74.5ch;
+    animation-duration: 5s, 600ms;
+    animation-timing-function: steps(100, end);
+}
+
+#disappear3 {
+    --text-width: 69.1ch;
+    animation-duration: 5s, 600ms;
+    animation-timing-function: steps(90, end);
+}
+
+#disappear4 {
+    --text-width: 40ch;
+    animation-duration: 4s, 600ms;
+    animation-timing-function: steps(50, end);
+}
+
+@keyframes typed-text {
+    from {width: 0;}
+    to {width: var(--text-width);}
+}
+@keyframes text-cursor {
+    from{border-right-color: black;}
+    to{border-right-color: transparent;}
+}
