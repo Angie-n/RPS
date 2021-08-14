@@ -31,6 +31,27 @@ function userChoice(choice) {
     playerSelection = choice;
 }
 
+function changeIcon(pSelect, cSelect) {
+    if (pSelect === "rock") {
+        document.getElementById("user-icon").className = "fas fa-hand-rock";
+    }
+    else if (pSelect === "scissors") {
+        document.getElementById("user-icon").className = "fas fa-hand-scissors";
+    }
+    else {
+        document.getElementById("user-icon").className = "fas fa-hand-paper";
+    }
+    if (cSelect === "rock") {
+        document.getElementById("computer-icon").className = "fas fa-hand-rock";
+    }
+    else if (cSelect === "scissors") {
+        document.getElementById("computer-icon").className = "fas fa-hand-scissors";
+    }
+    else {
+        document.getElementById("computer-icon").className = "fas fa-hand-paper";
+    }
+}
+
 let playerSelection;
 let computerSelection;
 let round = 1;
@@ -45,6 +66,8 @@ function game() {
         round++;
         console.log(playerScore + " " + computerScore);
         console.log(playerSelection + " " + computerSelection);
+        //Change icons to display what the user and computer picked
+        changeIcon(playerSelection, computerSelection);
         //Change background color and remark depending on how well the player is doing
         //Update scoreboard
         if (playerScore > computerScore) {
