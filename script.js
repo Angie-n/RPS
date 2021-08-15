@@ -46,7 +46,6 @@ function introToGame() {
     document.getElementById("intro").style.display = "none";
     document.getElementById("skip-button").style.display = "none";
     document.getElementById("game").style.display = "flex";
-
 }
 
 function computerPlay() {
@@ -118,6 +117,7 @@ function changeOutcomeIcon(roundResult) {
 function roundChanges(round, playerScore, computerScore) {
     if (playerScore > computerScore) {
         document.querySelector("body").style.background = "linear-gradient(hsl(0, 100%, 93%), white, white,white,hsl(0, 100%, 98%)) no-repeat";
+        document.querySelector("html").style.background = "linear-gradient(hsl(0, 100%, 93%)";
         document.getElementById("user-score").innerHTML = "Suspicious Human: " + playerScore;
         document.getElementById("computer-score").innerHTML = "Astounded Computer: " + computerScore;
         switch(round) {
@@ -137,6 +137,7 @@ function roundChanges(round, playerScore, computerScore) {
     }
     else if (playerScore < computerScore)  {
         document.querySelector("body").style.background = "linear-gradient(hsl(213, 100%, 93%), white, white,white,hsl(213, 100%, 93%)) no-repeat";
+        document.querySelector("html").style.background = "linear-gradient(hsl(213, 100%, 93%)";
         document.getElementById("user-score").innerHTML = "Foolish Human: " + playerScore;
         document.getElementById("computer-score").innerHTML = "Brilliant Computer: " + computerScore;
         switch(round) {
