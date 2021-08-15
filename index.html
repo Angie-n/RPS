@@ -40,11 +40,17 @@
         </div>
         <!-- This div will show up during the game-->
         <div id="game">
-            <h1>Choose your next move</h1>
-            <div id="RSP-options">
-                <button id="rock-option" onclick="userChoice('rock'); game();">Rock</button>
-                <button id="paper-option" onclick="userChoice('paper'); game();">Paper</button>
-                <button id="scissors-option" onclick="userChoice('scissors'); game();">Scissors</button>
+            <h1 id="game-title">Choose your next move</h1>
+            <div id="RSP-container">
+                <button id="rock-option" class= "RSP-options" onclick="userChoice('rock'); game();">
+                    <i class="fas fa-hand-rock"></i>Rock
+                </button>
+                <button id="paper-option" class= "RSP-options" onclick="userChoice('paper'); game();">
+                    <i class="fas fa-hand-paper"></i>Paper
+                </button>
+                <button id="scissors-option" class= "RSP-options" onclick="userChoice('scissors'); game();">
+                    <i class="fas fa-hand-scissors"></i>Scissors
+                </button>
             </div>
             <div id="score">
                 <h2>Score</h2>
@@ -53,15 +59,17 @@
             </div>
             <div id="round-icons">
                 <i id="user-icon" class="fas fa-hand-rock"></i>
+                <i id="outcome-icon" class="fab fa-creative-commons-nd"></i>
                 <i id="computer-icon" class="fas fa-hand-rock"></i>
             </div>
             <p id="game-remark">With the data I have accumulated, this should be easy</p>
         </div>
         <!-- This div will show up after the game-->
         <div id="results">
-            <h1 id="win-lose"></h2>
-            <p id="results-remark"></p>
+            <h1 id="win-lose"></h1>
+            <i id="results-icon" class="fa-solid fa-question"></i>
             <button id="next-game" onclick="window.location.reload();">Play Another Match</button>
+            <p id="results-remark"></p>
         </div>
     </body>
 </html>

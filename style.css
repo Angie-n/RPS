@@ -32,7 +32,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 4vh;
+    height: 5vh;
     margin: auto;
     font-size: 2.5vw;
     white-space: nowrap;
@@ -47,7 +47,7 @@ body {
     animation-duration: 2s, 500ms, 1s;
     animation-timing-function: steps(15, end);
     animation-delay: 0s, 0s, 9s;
-    animation-iteration-count: 1, 16, 1;
+    animation-iteration-count: 1, 4, 1;
 }
 
 #intro1b {
@@ -65,7 +65,7 @@ body {
     animation-duration: 5s, 500ms, 2s;
     animation-timing-function: steps(80, end);
     animation-delay: 11s, 11s, 24s;
-    animation-iteration-count: 1, 12, 1;
+    animation-iteration-count: 1, 10, 1;
 }
 
 #intro2b {
@@ -121,8 +121,98 @@ body {
 
 #game {
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#RSP-container {
+    display: flex;
+    justify-content: center;
+    height: 20vw;
+}
+
+.RSP-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    width: 20vw;
+    margin: 1vw;
+    background-color: white; 
+    border-radius: 10px;
+    border-style: outset;
+}
+
+.RSP-options i {
+    font-size: 9vw;
+    margin: 2vw 0;
+}
+
+.RSP-options:hover {
+    border: inset 3px;
+    background-color: rgb(240, 240, 240);
+}
+
+h1 {
+    font-size: 4vw;
+}
+
+#score {
+    display: flex;
+    width: 60vw;
+    font-size: 2.3vw;
+    margin: 0 2vw;
+}
+
+#score p {
+    text-align: center;
+    margin: auto;
+    width: 20vw;
+}
+
+#score h2 {
+    font-size: 3vw;
+    border-right: solid rgb(136, 136, 136) 1.5px;
+    padding-right: 9vw;
+}
+
+#round-icons {
+    width: 100%;
+    display: flex; 
+    justify-content: space-evenly;
+    font-size: 12vw;
+}
+
+#game-remark {
+    font-size: 2vw;
 }
 
 #results {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+}
+
+#results-icon {
+    font-size: 10vw;
+    margin: 2vw 0;
+}
+
+#next-game {
+    background-color: transparent;
+    color: rgb(41, 41, 41);
+    border: double;
+    font-size: 2vw;
+}
+
+#next-game:hover {
+    color: rgb(133, 133, 133);
+} 
+
+#results-remark {
+    margin-top: 10px;
 }

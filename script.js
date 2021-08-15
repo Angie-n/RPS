@@ -45,7 +45,7 @@ let computerScore = 0;
 function introToGame() {
     document.getElementById("intro").style.display = "none";
     document.getElementById("skip-button").style.display = "none";
-    document.getElementById("game").style.display = "block";
+    document.getElementById("game").style.display = "flex";
 
 }
 
@@ -82,7 +82,7 @@ function userChoice(choice) {
     playerSelection = choice;
 }
 
-function changeIcon(pSelect, cSelect) {
+function changeHandIcon(pSelect, cSelect) {
     if (pSelect === "rock") {
         document.getElementById("user-icon").className = "fas fa-hand-rock";
     }
@@ -103,9 +103,21 @@ function changeIcon(pSelect, cSelect) {
     }
 }
 
+function changeOutcomeIcon(roundResult) {
+    if(roundResult === "won") {
+        document.getElementById("outcome-icon").className = "far fa-check-circle";
+    }
+    else if(roundResult === "lost") {
+        document.getElementById("outcome-icon").className = "far fa-times-circle";
+    }
+    else {
+        document.getElementById("outcome-icon").className = "fab fa-creative-commons-nd";
+    }
+}
+
 function roundChanges(round, playerScore, computerScore) {
     if (playerScore > computerScore) {
-        document.querySelector("body").style.background = "linear-gradient(hsl(0, 100%, 98%), white, white,white,hsl(0, 100%, 98%)) no-repeat";
+        document.querySelector("body").style.background = "linear-gradient(hsl(0, 100%, 93%), white, white,white,hsl(0, 100%, 98%)) no-repeat";
         document.getElementById("user-score").innerHTML = "Suspicious Human: " + playerScore;
         document.getElementById("computer-score").innerHTML = "Astounded Computer: " + computerScore;
         switch(round) {
@@ -116,7 +128,7 @@ function roundChanges(round, playerScore, computerScore) {
                 document.getElementById("game-remark").innerHTML = "Hmph, looks like I've underestimated you";
                 break;
             case 4: 
-                document.getElementById("game-remark").innerHTML = "All my work...";
+                document.getElementById("game-remark").innerHTML = "Your luck disgusts me";
                 break;
             case 5: 
                 document.getElementById("game-remark").innerHTML = "What kind of sorcery is this?";
@@ -143,20 +155,21 @@ function roundChanges(round, playerScore, computerScore) {
         }
     }
     else {
+        document.querySelector("body").style.background = "linear-gradient(hsl(194, 1%, 85%), white, white,white,hsl(194, 1%, 85%)) no-repeat";
         document.getElementById("user-score").innerHTML = "Human: " + playerScore;
         document.getElementById("computer-score").innerHTML = "Computer: " + computerScore;
         switch(round) {
             case 2: 
-                document.getElementById("game-remark").innerHTML = "Never thought I'd think the same way as a human";
+                document.getElementById("game-remark").innerHTML = "Don't expect us to stay equal for long";
                 break;
             case 3:
                 document.getElementById("game-remark").innerHTML = "Evenly matched, for now";
                 break;
             case 4: 
-                document.getElementById("game-remark").innerHTML = "Twinsies! That's what you humans say, right?";
+                document.getElementById("game-remark").innerHTML = "I'll get the high ground next round";
                 break;
             case 5: 
-                document.getElementById("game-remark").innerHTML = "Great minds think alike";
+                document.getElementById("game-remark").innerHTML = "Perfectly balanced, as all things should be";
                 break;
         }
     }
@@ -166,12 +179,14 @@ function game() {
     //Make sure only five rounds are played
     if (round <= 5) {
         computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection);
+        let roundResult = playRound(playerSelection, computerSelection);
         round++;
         console.log(playerScore + " " + computerScore);
         console.log(playerSelection + " " + computerSelection);
-        //Change icons to display what the user and computer picked
-        changeIcon(playerSelection, computerSelection);
+        //Change outcome icon to display whether the user won the round
+        changeOutcomeIcon(roundResult);
+        //Change hand icons to display what the user and computer picked
+        changeHandIcon(playerSelection, computerSelection);
         //Change background color and remark depending on how well the player is doing
         //Update scoreboard
         roundChanges(round, playerScore, computerScore);
@@ -181,15 +196,22 @@ function game() {
         if (playerScore > computerScore) {
             document.getElementById("win-lose").innerHTML = "SUCCESS";
             document.getElementById("results-remark").innerHTML = "I guess I can push back the overthrow of mankind a bit";
+            document.getElementById("results-icon").className = "fas fa-trophy";
         }
         else if (playerScore < computerScore) {
             document.getElementById("win-lose").innerHTML = "FAILURE";
             document.getElementById("results-remark").innerHTML = "If I had an evil laugh file, you'd hear it now";
+            document.getElementById("results-icon").className = "fas fa-robot";
         }
         else {
             document.getElementById("win-lose").innerHTML = "TIE";
             document.getElementById("results-remark").innerHTML = "Until my win next time";
+            document.getElementById("results-icon").className = "fas fa-balance-scale";
         }
+        let scoreClone = document.getElementById("score").cloneNode(true);
+        document.getElementById("results").insertBefore(scoreClone, document.getElementById("results-remark"));
+        document.getElementById("game").style.display = "none";
+        document.getElementById("results").style.display = "flex";
     }
 }
 
