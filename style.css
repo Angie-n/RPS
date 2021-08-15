@@ -3,6 +3,21 @@ body {
     height: 100vh;
     background: linear-gradient(hsl(194, 1%, 85%), white, white,white,hsl(194, 1%, 85%)) no-repeat;
     background-size: cover;
+    letter-spacing: 0.4vw;
+}
+
+#skip-button {
+    font-size: 3vw;
+    display: block;
+    position: relative;
+    left: 85vw;
+    background-color: transparent;
+    color: rgb(57, 57, 57);
+    border: none;
+}
+
+#skip-button:hover {
+    color: rgb(117, 117, 117);
 }
 
 #intro {
@@ -23,7 +38,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     border-right: solid 1px;
-    letter-spacing: 0.4vw;
     animation: typed-text linear forwards, text-cursor linear forwards , delete-text linear forwards;
 }
 
@@ -91,4 +105,24 @@ body {
 @keyframes text-cursor {
     from{border-right-color: black;}
     to{border-right-color: transparent;}
+}
+
+#start-button {
+    visibility: hidden;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 90vh;
+    font-size: 2.2vh;
+    border: none;
+    background-color: transparent;
+    color: rgb(57, 57, 57);
+}
+
+#game {
+    display: none;
+}
+
+#results {
+    display: none;
 }

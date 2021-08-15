@@ -23,6 +23,30 @@ window.onload=()=> {
             document.getElementById("intro4").style.visibility = "visible";
         }
     });
+    document.getElementById("intro4").addEventListener("animationend", (event) => {
+        if (event.animationName === "typed-text") {
+            document.getElementById("start-button").style.visibility = "visible";
+            document.getElementById("skip-button").style.display = "none";
+        }
+    });
+    document.addEventListener("keydown", (event) => {
+        if(document.getElementById("start-button").style.visibility === "visible" && event.keyCode === 13) {
+            introToGame();
+        }
+    });
+}
+
+let playerSelection;
+let computerSelection;
+let round = 1;
+let playerScore = 0;
+let computerScore = 0;
+
+function introToGame() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("skip-button").style.display = "none";
+    document.getElementById("game").style.display = "block";
+
 }
 
 function computerPlay() {
@@ -137,12 +161,6 @@ function roundChanges(round, playerScore, computerScore) {
         }
     }
 }
-
-let playerSelection;
-let computerSelection;
-let round = 1;
-let playerScore = 0;
-let computerScore = 0;
 
 function game() {
     //Make sure only five rounds are played
