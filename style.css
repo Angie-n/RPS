@@ -5,53 +5,88 @@ body {
     background-size: cover;
 }
 
-.disappear {
-    letter-spacing: .12em;
+#intro {
+    height: 100vh;
+}
+
+.intro{
+    visibility: hidden;
+    position: absolute; 
+    width: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4vh;
+    margin: auto;
+    font-size: 2.5vw;
     white-space: nowrap;
     overflow: hidden;
     border-right: solid 1px;
-    animation: typed-text linear forwards, text-cursor linear forwards infinite;
+    letter-spacing: 0.4vw;
+    animation: typed-text linear forwards, text-cursor linear forwards , delete-text linear forwards;
 }
 
-#disappear1a {
-    --text-width: 15ch;
-    animation-duration: 2s, 600ms;
+#intro1a {
+    top: -4vh;
+    --text-width: 20vw;
+    animation-duration: 2s, 500ms, 1s;
     animation-timing-function: steps(15, end);
+    animation-delay: 0s, 0s, 9s;
+    animation-iteration-count: 1, 16, 1;
 }
 
-#disappear1b {
-    --text-width: 38.7ch;
-    animation-duration: 4s, 600ms;
+#intro1b {
+    top: 4vh;
+    --text-width: 51.7vw;
+    animation-duration: 4s, 500ms, 2s;
     animation-timing-function: steps(60, end);
+    animation-delay: 2s, 2s, 7s;
+    animation-iteration-count: 1, 12, 1;
 }
 
-#disappear2a {
-    --text-width: 55.5ch;
-    animation-duration: 5s, 600ms;
+#intro2a {
+    top: -4vh;
+    --text-width: 74.6vw;
+    animation-duration: 5s, 500ms, 2s;
     animation-timing-function: steps(80, end);
+    animation-delay: 11s, 11s, 24s;
+    animation-iteration-count: 1, 12, 1;
 }
 
-#disappear2b {
-    --text-width: 74.5ch;
-    animation-duration: 5s, 600ms;
+#intro2b {
+    top: 4vh;
+    --text-width: 80.3vw;
+    animation-duration: 5s, 500ms, 2s;
     animation-timing-function: steps(100, end);
+    animation-delay: 16s, 16s, 22s;
+    animation-iteration-count: 1, 12, 1;
 }
 
-#disappear3 {
-    --text-width: 69.1ch;
-    animation-duration: 5s, 600ms;
+#intro3 {
+    --text-width: 73.9vw;
+    animation-duration: 5s, 500ms, 2s;
     animation-timing-function: steps(90, end);
+    animation-delay: 26s, 26s, 33s;
+    animation-iteration-count: 1, 12, 1;
 }
 
-#disappear4 {
-    --text-width: 40ch;
-    animation-duration: 4s, 600ms;
+#intro4 {
+    animation-name: typed-text, text-cursor;
+    --text-width: 53.8vw;
+    animation-duration: 4s, 500ms;
     animation-timing-function: steps(50, end);
+    animation-delay: 35s, 35s;
+    animation-iteration-count: 1, infinite;
 }
 
 @keyframes typed-text {
     from {width: 0;}
     to {width: var(--text-width);}
+}
+@keyframes delete-text {
+    from{width: var(--text-width);}
+    to {width: 0;}
 }
 @keyframes text-cursor {
     from{border-right-color: black;}

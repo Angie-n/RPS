@@ -1,3 +1,30 @@
+window.addEventListener("load", () => {
+    document.getElementById("intro1a").style.visibility = "visible";
+});
+window.onload=()=> {
+    document.getElementById("intro1a").addEventListener("animationend", (event) => {
+        if (event.animationName === "typed-text") {
+            document.getElementById("intro1b").style.visibility = "visible";
+        }
+        if (event.animationName === "delete-text") {
+            document.getElementById("intro2a").style.visibility = "visible";
+        }
+    });
+    document.getElementById("intro2a").addEventListener("animationend", (event) => {
+        if (event.animationName === "typed-text") {
+            document.getElementById("intro2b").style.visibility = "visible";
+        }
+        if (event.animationName === "delete-text") {
+            document.getElementById("intro3").style.visibility = "visible";
+        }
+    });
+    document.getElementById("intro3").addEventListener("animationend", (event) => {
+        if (event.animationName === "delete-text") {
+            document.getElementById("intro4").style.visibility = "visible";
+        }
+    });
+}
+
 function computerPlay() {
     //Create a variable containing an array with all possible options
     let RPSOptions = ["rock", "paper", "scissors"];
