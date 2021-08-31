@@ -82,7 +82,7 @@ body {
 }
 
 #intro3 {
-    --text-width: 73.9vw;
+    --text-width: 53.3vw;
     animation-duration: 5s, 500ms, 2s;
     animation-timing-function: steps(90, end);
     animation-delay: 26s, 26s, 33s;
